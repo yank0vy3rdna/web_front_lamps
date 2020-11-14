@@ -1,5 +1,6 @@
 import {createStore} from 'redux';
 import initialState from "./initialState";
+import {checkAuth} from "../services/Login";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -13,21 +14,6 @@ function reducer(state, action) {
 
 const store = createStore(reducer, initialState);
 
-function checkAuth() {
-    if (store.getState().token !== null) {
-        fetch("/auth/check?token=" + store.getState().token)
-            .then(response => response.text()
-                .then((text => {
-                            if (text !== 'true') {
-                                store.dispatch({type: "CHANGE_TOKEN", value: null})
-                                localStorage.clear()
-                            }
-                        }
-                    )
-                )
-            )
-    }
-}
 
 store.subscribe(checkAuth)
 

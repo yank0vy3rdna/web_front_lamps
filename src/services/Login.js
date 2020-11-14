@@ -12,7 +12,7 @@ const login = (username, password, setVisible, setText) => {
         formBody.push(encodedKey + "=" + encodedValue);
     }
     formBody = '?' + formBody.join("&");
-    fetch("/auth/login" + formBody, {
+    fetch("/api/auth/login" + formBody, {
         method: 'POST',
     }).then(response => response.text().then(text => {
             if (response.ok) {
@@ -26,9 +26,25 @@ const login = (username, password, setVisible, setText) => {
         })
     )
 }
+
+function checkAuth() {
+    if (store.getState().token !== null) {
+        fetch("/api/auth/check?token=" + store.getState().token)
+            .then(response => response.text()
+                .then((text => {
+                            if (text !== 'true') {
+                                store.dispatch({type: "CHANGE_TOKEN", value: null})
+                                localStorage.clear()
+                            }
+                        }
+                    )
+                )
+            )
+    }
+}
 const logout = () =>{
     localStorage.clear()
     store.dispatch({type: "CHANGE_TOKEN", value: {token: null}})
     window.location.reload(false);
 }
-export {logout, login};
+export {logout, login, checkAuth};
