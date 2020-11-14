@@ -29,20 +29,24 @@ const login = (username, password, setVisible, setText) => {
 
 function checkAuth() {
     if (store.getState().token !== null) {
-        fetch("/api/auth/check?token=" + store.getState().token)
-            .then(response => response.text()
-                .then((text => {
-                            if (text !== 'true') {
-                                store.dispatch({type: "CHANGE_TOKEN", value: null})
-                                localStorage.clear()
-                            }
+        fetch("/api/auth/check?token=" + store.getState().token, {
+            headers: {
+                'Authorization': 'Bearer ' + store.getState().token
+            }
+        }).then(response => response.text()
+            .then((text => {
+                        if (text !== 'true') {
+                            store.dispatch({type: "CHANGE_TOKEN", value: null})
+                            localStorage.clear()
                         }
-                    )
+                    }
                 )
             )
+        )
     }
 }
-const logout = () =>{
+
+const logout = () => {
     localStorage.clear()
     store.dispatch({type: "CHANGE_TOKEN", value: {token: null}})
     window.location.reload(false);
