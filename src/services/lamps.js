@@ -23,7 +23,7 @@ class Lamps {
 
     update() {
         const xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "/api/lamps_info", true);
+        xmlhttp.open("GET", "/api/getInfo", true);
         xmlhttp.setRequestHeader( 'Authorization', 'Bearer ' + store.getState().token)
         xmlhttp.send(null);
         xmlhttp.onreadystatechange = () => {
