@@ -6,8 +6,6 @@ function Map() {
     let lamps = new Lamps()
     useEffect(() => {
         lamps.canvas = canvas.current
-        lamps.update()
-        lamps.render()
     }, [])
     const onMouseDown = (e) => {
         try {

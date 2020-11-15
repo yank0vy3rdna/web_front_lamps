@@ -15,6 +15,7 @@ class Lamps {
 
     Lamps(canvas) {
         this.canvas = canvas
+        setTimeout(this.update, 1000)
     }
 
     findLamp(id) {
@@ -24,11 +25,14 @@ class Lamps {
     update() {
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "/api/getInfo", true);
-        xmlhttp.setRequestHeader( 'Authorization', 'Bearer ' + store.getState().token)
+        xmlhttp.setRequestHeader('Authorization', 'Bearer ' + store.getState().token)
         xmlhttp.send(null);
         xmlhttp.onreadystatechange = () => {
             if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 this.lamps = JSON.parse(xmlhttp.responseText);
+                if (this.canvas !== null) {
+                    this.render()
+                }
             }
         }
     }
@@ -123,7 +127,7 @@ class Lamps {
 
     changeLamp(id) {
         let xmlhttp = new XMLHttpRequest();
-        xmlhttp.setRequestHeader( 'Authorization', 'Bearer ' + store.getState().token)
+        xmlhttp.setRequestHeader('Authorization', 'Bearer ' + store.getState().token)
         const lamp = this.findLamp(id);
         if (lamp.connected === true) {
             if (lamp.enable) {
