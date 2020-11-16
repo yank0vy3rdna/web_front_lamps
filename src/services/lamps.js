@@ -13,12 +13,19 @@ class Lamps {
     offset = 10;
     radius = 10;
 
-    Lamps(){
+    Lamps() {
         console.log("newLamps")
     }
 
-    startUpdating(){
-        setInterval(this.update, 1000)
+    stopUpdating() {
+        if (Lamps.interval !== null) {
+            clearInterval(Lamps.interval)
+        }
+    }
+
+    startUpdating() {
+        this.stopUpdating()
+        Lamps.interval = setInterval(this.update, 1000)
     }
 
     findLamp(id) {
@@ -26,18 +33,20 @@ class Lamps {
     }
 
     update() {
-        const xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "/api/getInfo", true);
-        xmlhttp.setRequestHeader('Authorization', 'Bearer ' + store.getState().token)
-        xmlhttp.send(null);
-        xmlhttp.onreadystatechange = () => {
-            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                this.lamps = JSON.parse(xmlhttp.responseText);
+        fetch("/api/getInfo", {
+            headers: {
+                Authorization: 'Bearer ' + store.getState().token
+            }
+        }).then((response) => {
+            if (response.ok) {
+                this.lamps = response.json();
                 if (this.canvas !== null) {
                     this.render()
                 }
+            } else {
+                console.error("API isn't responding")
             }
-        }
+        })
     }
 
     getColorByLine(line) {
