@@ -1,12 +1,15 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import Lamps from "../../../services/lamps";
 
 function Map() {
     const canvas = useRef(null)
-    let lamps = new Lamps()
+    const lamps = useMemo(() => {
+        return new Lamps()
+    }, [])
     useEffect(() => {
         lamps.canvas = canvas.current
-    }, [])
+        lamps.startUpdating()
+    }, [lamps])
     const onMouseDown = (e) => {
         try {
             lamps.mouseClick(e.clientX - canvas.current.getBoundingClientRect().left,

@@ -13,9 +13,12 @@ class Lamps {
     offset = 10;
     radius = 10;
 
-    Lamps(canvas) {
-        this.canvas = canvas
-        setTimeout(this.update, 1000)
+    Lamps(){
+        console.log("newLamps")
+    }
+
+    startUpdating(){
+        setInterval(this.update, 1000)
     }
 
     findLamp(id) {
