@@ -30,7 +30,7 @@ function LoginForm() {
                                 <label htmlFor="username" style={{"padding-left": "5%"}}>Username</label>
                             </Col>
                             <Col sm="12" md="7" xl="5">
-                                <Input placeholder="username"/>
+                                <Input placeholder="username" value={username} onChange={setUsername}/>
                             </Col>
                         </Row>
                         <Row style={{"margin-bottom": "4%"}}>
@@ -38,8 +38,8 @@ function LoginForm() {
                                 <Label htmlFor="password" style={{"padding-left": "5%"}}>Password</Label>
                             </Col>
                             <Col sm="12" md="7" xl="5">
-                                <Input type="password" name="password" id="examplePassword"
-                                       placeholder="password placeholder"/>
+                                <Input type="password" name="password" value={password} onChange={setPassword}
+                                       placeholder="password"/>
                             </Col>
                         </Row>
                         <Row style={{"margin-bottom": "2%", "text-align": "right", "padding-right": "9%"}}>
