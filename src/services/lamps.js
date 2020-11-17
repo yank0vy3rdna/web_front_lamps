@@ -40,6 +40,10 @@ class Lamps {
         }).then(callback).catch(() => {
             console.log(this)
         })
+        // this.lamps = JSON.parse("{\"1\":{\"amperage\":0.0245,\"connected\":1,\"enable\":true,\"id\":\"1\",\"lampline\":1,\"lampx\":577,\"lampy\":642,\"type\":\"lamp\",\"voltage\":204.102},\"2\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"2\",\"lampline\":1,\"lampx\":583,\"lampy\":549,\"type\":\"lamp\",\"voltage\":null},\"3\":{\"amperage\":0.29400000000000004,\"connected\":1,\"enable\":true,\"id\":\"3\",\"lampline\":1,\"lampx\":616,\"lampy\":550,\"type\":\"lamp\",\"voltage\":183.29399999999998},\"4\":{\"amperage\":0.3185,\"connected\":1,\"enable\":true,\"id\":\"4\",\"lampline\":1,\"lampx\":621,\"lampy\":483,\"type\":\"lamp\",\"voltage\":169.82999999999998},\"5\":{\"amperage\":0.1225,\"connected\":1,\"enable\":true,\"id\":\"5\",\"lampline\":1,\"lampx\":624,\"lampy\":420,\"type\":\"lamp\",\"voltage\":211.446},\"6\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"6\",\"lampline\":2,\"lampx\":638,\"lampy\":732,\"type\":\"lamp\",\"voltage\":null},\"7\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"7\",\"lampline\":2,\"lampx\":635,\"lampy\":785,\"type\":\"lamp\",\"voltage\":null},\"8\":{\"amperage\":0.098,\"connected\":1,\"enable\":true,\"id\":\"8\",\"lampline\":2,\"lampx\":436,\"lampy\":773,\"type\":\"lamp\",\"voltage\":231.948},\"9\":{\"amperage\":0.2205,\"connected\":1,\"enable\":true,\"id\":\"9\",\"lampline\":2,\"lampx\":467,\"lampy\":757,\"type\":\"lamp\",\"voltage\":243.26999999999998},\"10\":{\"amperage\":0.196,\"connected\":1,\"enable\":true,\"id\":\"10\",\"lampline\":2,\"lampx\":437,\"lampy\":743,\"type\":\"lamp\",\"voltage\":224.91},\"11\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"11\",\"lampline\":2,\"lampx\":468,\"lampy\":730,\"type\":\"lamp\",\"voltage\":null},\"12\":{\"amperage\":0.196,\"connected\":1,\"enable\":true,\"id\":\"12\",\"lampline\":2,\"lampx\":436,\"lampy\":716,\"type\":\"lamp\",\"voltage\":254.286},\"13\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"13\",\"lampline\":3,\"lampx\":511,\"lampy\":634,\"type\":\"lamp\",\"voltage\":null},\"14\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"14\",\"lampline\":3,\"lampx\":513,\"lampy\":599,\"type\":\"lamp\",\"voltage\":null},\"15\":{\"amperage\":0.14700000000000002,\"connected\":1,\"enable\":true,\"id\":\"15\",\"lampline\":3,\"lampx\":515,\"lampy\":563,\"type\":\"lamp\",\"voltage\":259.794},\"16\":{\"amperage\":0.3185,\"connected\":1,\"enable\":true,\"id\":\"16\",\"lampline\":3,\"lampx\":516,\"lampy\":532,\"type\":\"lamp\",\"voltage\":254.59199999999998},\"17\":{\"amperage\":0.049,\"connected\":1,\"enable\":true,\"id\":\"17\",\"lampline\":3,\"lampx\":552,\"lampy\":521,\"type\":\"lamp\",\"voltage\":259.182},\"18\":{\"amperage\":0.245,\"connected\":1,\"enable\":true,\"id\":\"18\",\"lampline\":3,\"lampx\":553,\"lampy\":487,\"type\":\"lamp\",\"voltage\":242.352},\"19\":{\"amperage\":0.1715,\"connected\":1,\"enable\":true,\"id\":\"19\",\"lampline\":3,\"lampx\":554,\"lampy\":456,\"type\":\"lamp\",\"voltage\":237.456},\"20\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"20\",\"lampline\":3,\"lampx\":555,\"lampy\":421,\"type\":\"lamp\",\"voltage\":null},\"21\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"21\",\"lampline\":4,\"lampx\":425,\"lampy\":636,\"type\":\"lamp\",\"voltage\":null},\"22\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"22\",\"lampline\":4,\"lampx\":380,\"lampy\":635,\"type\":\"lamp\",\"voltage\":null},\"23\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"23\",\"lampline\":4,\"lampx\":380,\"lampy\":574,\"type\":\"lamp\",\"voltage\":null},\"24\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"24\",\"lampline\":4,\"lampx\":380,\"lampy\":459,\"type\":\"lamp\",\"voltage\":null},\"25\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"25\",\"lampline\":4,\"lampx\":325,\"lampy\":459,\"type\":\"lamp\",\"voltage\":null},\"26\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"26\",\"lampline\":4,\"lampx\":270,\"lampy\":459,\"type\":\"lamp\",\"voltage\":null},\"27\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"27\",\"lampline\":4,\"lampx\":220,\"lampy\":459,\"type\":\"lamp\",\"voltage\":null},\"28\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"28\",\"lampline\":4,\"lampx\":220,\"lampy\":574,\"type\":\"lamp\",\"voltage\":null},\"29\":{\"amperage\":0.0245,\"connected\":1,\"enable\":false,\"id\":\"29\",\"lampline\":5,\"lampx\":319,\"lampy\":300,\"type\":\"lamp\",\"voltage\":255.51},\"30\":{\"amperage\":0.2205,\"connected\":1,\"enable\":true,\"id\":\"30\",\"lampline\":5,\"lampx\":263,\"lampy\":300,\"type\":\"lamp\",\"voltage\":236.844},\"31\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"31\",\"lampline\":5,\"lampx\":207,\"lampy\":300,\"type\":\"lamp\",\"voltage\":null},\"32\":{\"amperage\":0.0245,\"connected\":1,\"enable\":true,\"id\":\"32\",\"lampline\":5,\"lampx\":151,\"lampy\":300,\"type\":\"lamp\",\"voltage\":252.45},\"33\":{\"amperage\":0.1225,\"connected\":1,\"enable\":true,\"id\":\"33\",\"lampline\":5,\"lampx\":95,\"lampy\":300,\"type\":\"lamp\",\"voltage\":241.74},\"34\":{\"amperage\":0.14700000000000002,\"connected\":1,\"enable\":true,\"id\":\"34\",\"lampline\":5,\"lampx\":90,\"lampy\":350,\"type\":\"lamp\",\"voltage\":232.56},\"35\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"35\",\"lampline\":6,\"lampx\":375,\"lampy\":300,\"type\":\"lamp\",\"voltage\":null},\"36\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"36\",\"lampline\":6,\"lampx\":431,\"lampy\":300,\"type\":\"lamp\",\"voltage\":null},\"37\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"37\",\"lampline\":6,\"lampx\":487,\"lampy\":300,\"type\":\"lamp\",\"voltage\":null},\"38\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"38\",\"lampline\":6,\"lampx\":543,\"lampy\":300,\"type\":\"lamp\",\"voltage\":null},\"39\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"39\",\"lampline\":6,\"lampx\":604,\"lampy\":300,\"type\":\"lamp\",\"voltage\":null},\"40\":{\"amperage\":0.049,\"connected\":1,\"enable\":true,\"id\":\"40\",\"lampline\":6,\"lampx\":602,\"lampy\":335,\"type\":\"lamp\",\"voltage\":227.358},\"41\":{\"amperage\":0.196,\"connected\":1,\"enable\":true,\"id\":\"41\",\"lampline\":6,\"lampx\":600,\"lampy\":363,\"type\":\"lamp\",\"voltage\":251.838},\"42\":{\"amperage\":0.0245,\"connected\":1,\"enable\":true,\"id\":\"42\",\"lampline\":6,\"lampx\":598,\"lampy\":389,\"type\":\"lamp\",\"voltage\":253.98},\"71\":{\"amperage\":1.0290000000000001,\"connected\":1,\"enable\":true,\"id\":\"71\",\"lampline\":1,\"lampx\":536,\"lampy\":724,\"type\":\"generator\",\"voltage\":252.756},\"72\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"72\",\"lampline\":2,\"lampx\":586,\"lampy\":724,\"type\":\"generator\",\"voltage\":null},\"73\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"73\",\"lampline\":3,\"lampx\":460,\"lampy\":664,\"type\":\"generator\",\"voltage\":null},\"74\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"74\",\"lampline\":4,\"lampx\":415,\"lampy\":664,\"type\":\"generator\",\"voltage\":null},\"75\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"75\",\"lampline\":5,\"lampx\":309,\"lampy\":235,\"type\":\"generator\",\"voltage\":null},\"76\":{\"amperage\":null,\"connected\":null,\"enable\":null,\"id\":\"76\",\"lampline\":6,\"lampx\":365,\"lampy\":234,\"type\":\"generator\",\"voltage\":null}}")
+        // if (this.canvas !== null) {
+        //     this.render()
+        // }
     }
 
     getColorByLine(line) {
@@ -67,7 +71,7 @@ class Lamps {
         ctx.font = "15px Arial";
         ctx.fillStyle = "white";
         ctx.fillText("ID: " + lamp.id, lamp.lampx + 30, lamp.lampy + 50);
-        ctx.fillText(lamp.ip, lamp.lampx + 30, lamp.lampy + 70);
+        // ctx.fillText(lamp.a, lamp.lampx + 30, lamp.lampy + 70);
     }
 
     render() {
@@ -79,7 +83,7 @@ class Lamps {
                 for (const a in this.lamps) {
                     const second = this.findLamp(a);
                     ctx.beginPath();
-                    if (second.lampline === first.lampline && second.id === first.id + 1) {
+                    if (second.lampline === first.lampline && Number(second.id) === Number(first.id) + 1) {
                         ctx.strokeStyle = this.getColorByLine(first.lampline)
                         ctx.moveTo(first.lampx - this.radius, first.lampy - this.radius);
                         ctx.lineTo(second.lampx - this.radius, second.lampy - this.radius);
@@ -130,17 +134,22 @@ class Lamps {
         }
     }
 
-    changeLamp(id) {
-        let xmlhttp = new XMLHttpRequest();
-        xmlhttp.setRequestHeader('Authorization', 'Bearer ' + store.getState().token)
-        const lamp = this.findLamp(id);
-        if (lamp.connected === true) {
+    changeLamp(lamp) {
+        console.log("prikol")
+        if (lamp.connected === 1) {
             if (lamp.enable) {
-                xmlhttp.open("GET", "/api/lampOff?lamp_id=" + lamp.id, true);
+                fetch("/api/lampOff?lamp_id=" + lamp.id, {
+                    headers: {
+                        Authorization: 'Bearer ' + store.getState().token
+                    }
+                })
             } else {
-                xmlhttp.open("GET", "/api/lampOn?lamp_id=" + lamp.id, true);
+                fetch("/api/lampOn?lamp_id=" + lamp.id, {
+                    headers: {
+                        Authorization: 'Bearer ' + store.getState().token
+                    }
+                })
             }
-            xmlhttp.send(null);
         }
 
     }
@@ -180,9 +189,9 @@ class Lamps {
                 minrastnumber = i;
             }
         }
-        var minlamp = this.findLamp(minrastnumber);
+        const minlamp = this.findLamp(minrastnumber);
         if (minrast <= this.radius * 1.5) {
-            this.changeLamp(minlamp.id);
+            this.changeLamp(minlamp);
         }
     }
 

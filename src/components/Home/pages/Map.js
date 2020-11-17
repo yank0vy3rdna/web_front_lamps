@@ -6,12 +6,13 @@ function Map() {
     const [interval, setIntervalState] = useState(null)
     useEffect(() => {
         lamps.canvas = canvas.current
+        lamps.update()
         if (interval === null) {
             setIntervalState(setInterval(() => {
                 lamps.update()
             }, 3000))
         }
-    }, [canvas])
+    }, [canvas, interval])
     const onMouseDown = (e) => {
         try {
             lamps.mouseClick(e.clientX - canvas.current.getBoundingClientRect().left,
