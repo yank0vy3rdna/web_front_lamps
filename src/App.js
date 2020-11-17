@@ -3,7 +3,6 @@ import React from "react";
 import store from "./storage/store";
 import LoginPage from "./components/LoginPage/LoginPage";
 import HomePage from "./components/Home/HomePage";
-import {Route} from "react-router-dom";
 import {Container} from "reactstrap";
 
 const Login = () => (

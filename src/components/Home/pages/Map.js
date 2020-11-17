@@ -1,15 +1,17 @@
-import React, {useEffect, useMemo, useRef} from 'react';
-import Lamps from "../../../services/lamps";
+import React, {useEffect, useRef, useState} from 'react';
+import lamps from "../../../services/lamps";
 
 function Map() {
     const canvas = useRef(null)
-    const lamps = useMemo(() => {
-        return new Lamps()
-    }, [])
+    const [interval, setIntervalState] = useState(null)
     useEffect(() => {
         lamps.canvas = canvas.current
-        lamps.startUpdating()
-    }, [lamps])
+        if (interval === null) {
+            setIntervalState(setInterval(() => {
+                lamps.update()
+            }, 3000))
+        }
+    }, [canvas])
     const onMouseDown = (e) => {
         try {
             lamps.mouseClick(e.clientX - canvas.current.getBoundingClientRect().left,

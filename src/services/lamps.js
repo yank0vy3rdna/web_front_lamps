@@ -13,39 +13,32 @@ class Lamps {
     offset = 10;
     radius = 10;
 
-    Lamps() {
-        console.log("newLamps")
-    }
-
-    stopUpdating() {
-        if (Lamps.interval !== null) {
-            clearInterval(Lamps.interval)
-        }
-    }
-
-    startUpdating() {
-        this.stopUpdating()
-        Lamps.interval = setInterval(this.update, 1000)
-    }
-
     findLamp(id) {
         return this.lamps[id]
     }
 
     update() {
+        const callback = (response) => {
+            console.log(this)
+            if (response.ok) {
+                response.json().then(
+                    data => {
+                        this.lamps = data
+                        if (this.canvas !== null) {
+                            this.render()
+                        }
+                    }
+                );
+            } else {
+                console.error("API isn't responding")
+            }
+        }
         fetch("/api/getInfo", {
             headers: {
                 Authorization: 'Bearer ' + store.getState().token
             }
-        }).then((response) => {
-            if (response.ok) {
-                this.lamps = response.json();
-                if (this.canvas !== null) {
-                    this.render()
-                }
-            } else {
-                console.error("API isn't responding")
-            }
+        }).then(callback).catch(() => {
+            console.log(this)
         })
     }
 
@@ -195,4 +188,6 @@ class Lamps {
 
 }
 
-export default Lamps;
+const lamps = new Lamps()
+
+export default lamps;
