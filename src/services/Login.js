@@ -38,6 +38,7 @@ function checkAuth() {
                         if (text !== 'true') {
                             store.dispatch({type: "CHANGE_TOKEN", value: null})
                             localStorage.clear()
+                            window.location.reload(false);
                         }
                     }
                 )
