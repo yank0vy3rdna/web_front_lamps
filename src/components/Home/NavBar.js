@@ -27,7 +27,7 @@ const NavBar = (props) => {
                             <NavLink href="/">Map</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/plot/" disabled>Plots</NavLink>
+                            <NavLink href="/grafana/">Plots</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/controls/" disabled>Controls</NavLink>
