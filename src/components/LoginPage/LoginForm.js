@@ -15,6 +15,7 @@ function LoginForm() {
 
     const onLogin = (e) => {
         login(username, password, setAlertVisible, setAlertText)
+        window.location.reload(false);
     }
     return (
         <Col sm="12" md="7" xl="5" style={{"margin": "auto"}}>
